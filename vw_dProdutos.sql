@@ -5,7 +5,7 @@ ALTER VIEW vw_dProdutos
 
 AS
 
-SELECT p.IDProduto                                  AS IDProduo
+SELECT p.IDProduto                                  AS IDProduto
 	 , p.Produto                                    AS Produto
 	 , p.Segmento                                   AS Segmento
 	 , c.Categoria                                  AS Categoria
@@ -20,3 +20,5 @@ SELECT p.IDProduto                                  AS IDProduo
 
 
 SELECT * FROM vw_dProdutos
+
+

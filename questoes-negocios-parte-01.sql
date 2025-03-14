@@ -2,7 +2,6 @@
 
 -- 1. Quantas vendas e devoluções foram registradas no total?
 
-
 SELECT a.Status
 	 , SUM(a.Qtde) AS Qtde
   FROM
@@ -45,6 +44,13 @@ SELECT Status
 	BY Status
 
 -- 3. Qual é o valor total das devolucoes realizadas?
+
+SELECT Status
+	 , SUM( Valor ) AS Valor
+  FROM #tbl_operacao
+  WHERE Status = 'Devolução'
+  GROUP
+	BY Status
 
 -- 4. Quantos clientes distintos fizeram compras?
 

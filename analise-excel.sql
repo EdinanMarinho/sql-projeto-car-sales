@@ -15,6 +15,7 @@ SELECT a.Status
 	 , b.Categoria
 	 , b.Segmento
 	 , b.Produto
+	 , LEFT(b.Produto, CHARINDEX(' ', b.Produto)) AS Marca
   FROM (
 SELECT * FROM Vendas
 UNION 
@@ -28,3 +29,5 @@ LEFT JOIN (
 	 , p.Produto
   FROM Produto p
   LEFT JOIN Categoria ca ON p.IDCategoria = ca.IDCategoria ) b ON a.IDProduto = b.IDProduto
+
+

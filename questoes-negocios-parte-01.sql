@@ -54,3 +54,17 @@ SELECT Status
 
 -- 4. Quantos clientes distintos fizeram compras?
 
+SELECT COUNT( DISTINCT IDCliente ) AS Clientes_Compra
+  FROM #tbl_operacao
+  WHERE Status = 'Venda'
+
+
+-- 5. Quantos clientes distintos fizeram devolucao?
+
+SELECT COUNT( DISTINCT IDCliente ) AS Clientes_Devolucao
+  FROM #tbl_operacao
+  WHERE Status = 'Devolução'
+
+
+
+

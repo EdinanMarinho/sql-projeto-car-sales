@@ -36,5 +36,15 @@ SELECT * FROM Devolucoes
 ) a
 
 -- 2. Qual é o valor total das vendas realizadas?
--- 3. Quantos clientes distintos fizeram compras?
+
+SELECT Status
+	 , SUM( Valor ) AS Valor
+  FROM #tbl_operacao
+  WHERE Status = 'Venda'
+  GROUP
+	BY Status
+
+-- 3. Qual é o valor total das devolucoes realizadas?
+
+-- 4. Quantos clientes distintos fizeram compras?
 

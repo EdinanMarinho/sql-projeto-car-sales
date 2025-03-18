@@ -58,7 +58,6 @@ SELECT COUNT( DISTINCT IDCliente ) AS Clientes_Compra
   FROM #tbl_operacao
   WHERE Status = 'Venda'
 
-
 -- 5. Quantos clientes distintos fizeram devolucao?
 
 SELECT COUNT( DISTINCT IDCliente ) AS Clientes_Devolucao
@@ -80,7 +79,6 @@ SELECT TOP 1 WITH TIES
   JOIN Lojas  b ON a.IDloja = b.IDLoja
   GROUP BY b.Loja
   ORDER BY Total DESC
-
 
 -- Outra maneira com MAX & SUBQUERY
 SELECT b.Loja
@@ -172,4 +170,14 @@ SELECT TOP 1 WITH TIES
   GROUP BY YEAR( Data ), MONTH( Data )
   ORDER BY Devolucao_Total DESC
 
+-- 16. Qual é a categoria de veículos que teve mais devolucao?
+SELECT TOP 1 WITH TIES
+	   c.Categoria
+	 , SUM( a.Qtde )  AS Qtd_Total_Devolucao
+	 , SUM( a.Valor ) AS Devolucao_Total
+  FROM Devolucoes a
+  JOIN Produto b on a.IDProduto = b.IDProduto
+  JOIN Categoria c ON b.IDCategoria = c.IDCategoria
+  GROUP BY c.Categoria
+  ORDER BY Devolucao_Total DESC
 

@@ -128,10 +128,20 @@ SELECT TOP 1 WITH TIES
 
 -- 11. Qual o ticket médio das vendas por loja?
 SELECT b.Loja AS Loja
-	 , ROUND( SUM( a.Valor) / SUM( a.Qtde ),2) AS Ticket_Medio
+	 , ROUND( SUM( a.Valor) / SUM( a.Qtde ),2 ) AS Ticket_Medio
   FROM Vendas a
   JOIN  Lojas  b ON a.IDloja = b.IDLoja
   GROUP BY b.Loja
   ORDER BY Ticket_Medio DESC
+
+-- 12 .Quais são os três estados com maior volume de vendas?
+SELECT TOP 3 WITH TIES
+	   b.Estado AS Estado
+	 , SUM( a.Valor ) AS Valor_Total
+  FROM Vendas a
+  JOIN Clientes b ON a.IDCliente = b.IDCliente
+  GROUP BY b.Estado
+  ORDER BY Valor_Total DESC
+
 
 

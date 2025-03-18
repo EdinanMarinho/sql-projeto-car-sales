@@ -70,6 +70,37 @@ SELECT COUNT( DISTINCT IDCliente ) AS Clientes_Devolucao
 SELECT ROUND(AVG( VALOR ),2) AS Media_Valor_Venda
   FROM Vendas
 
+-- 7. Qual é a Loja com Maior Número de Vendas? Em termos de Quantidade.
+-- Forma mais simples e prática de responder a pergunta
+
+SELECT TOP 1 WITH TIES 
+	   b.Loja
+	 , SUM( a.Qtde ) AS Total
+  FROM Vendas a
+  JOIN Lojas  b ON a.IDloja = b.IDLoja
+  GROUP BY b.Loja
+  ORDER BY Total DESC
+
+
+-- Outra maneira com MAX & SUBQUERY
+SELECT b.Loja
+	 , SUM(a.Qtde) AS Total
+  FROM Vendas a
+  JOIN Lojas b ON a.IDloja = b.IDLoja
+  GROUP BY b.Loja
+  HAVING SUM(a.Qtde) = (
+      SELECT MAX(Total) 
+      FROM (
+          SELECT SUM(Qtde) AS Total
+          FROM Vendas
+          GROUP BY IDloja
+      ) AS c
+)
+
+
+
+
+
 
 
 

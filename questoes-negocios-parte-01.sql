@@ -107,8 +107,12 @@ SELECT TOP 1 WITH TIES
   GROUP BY b.Loja
   ORDER BY Valor_Total DESC
 
-
-
-
-
+-- 9. Quais são as Cinco Marcas mais vendidas em termos de quantidade? 
+SELECT TOP 5 WITH TIES
+	   LEFT( b.Produto, CHARINDEX(' ', b.Produto)) AS Marca_Produto
+	 , SUM( a.Qtde) AS Qtde_Total
+  FROM Vendas a
+  JOIN Produto b ON a.IDProduto = b.IDProduto
+  GROUP BY LEFT( b.Produto, CHARINDEX(' ', b.Produto))
+  ORDER BY Qtde_Total DESC
 

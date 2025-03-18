@@ -116,3 +116,12 @@ SELECT TOP 5 WITH TIES
   GROUP BY LEFT( b.Produto, CHARINDEX(' ', b.Produto))
   ORDER BY Qtde_Total DESC
 
+-- 10. Qual é a categoria de veículos mais vendida?
+SELECT TOP 1 WITH TIES
+	   c.Categoria   AS Categoria
+	 , SUM( a.Qtde ) AS Qtde_Total
+  FROM Vendas      a
+  JOIN Produto     b ON a.IDProduto = b.IDProduto
+  JOIN Categoria   c ON b.IDCategoria = c.IDCategoria  
+  GROUP BY c.Categoria
+  ORDER BY Qtde_Total DESC

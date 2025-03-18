@@ -125,3 +125,13 @@ SELECT TOP 1 WITH TIES
   JOIN Categoria   c ON b.IDCategoria = c.IDCategoria  
   GROUP BY c.Categoria
   ORDER BY Qtde_Total DESC
+
+-- 11. Qual o ticket médio das vendas por loja?
+SELECT b.Loja AS Loja
+	 , ROUND( SUM( a.Valor) / SUM( a.Qtde ),2) AS Ticket_Medio
+  FROM Vendas a
+  JOIN  Lojas  b ON a.IDloja = b.IDLoja
+  GROUP BY b.Loja
+  ORDER BY Ticket_Medio DESC
+
+

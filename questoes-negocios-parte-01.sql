@@ -143,5 +143,14 @@ SELECT TOP 3 WITH TIES
   GROUP BY b.Estado
   ORDER BY Valor_Total DESC
 
+-- 13. Em qual mês ocorreu o maior número de vendas?
+SELECT TOP 1 WITH TIES
+	   YEAR( Data )  AS ANO
+	 , MONTH( Data ) AS MES
+	 , SUM( Qtde )   AS Qtde_Total
+	 , SUM( Valor )  AS Valor_Total
+  FROM Vendas
+  GROUP BY YEAR( Data ), MONTH( Data )
+  ORDER BY Valor_Total DESC
 
 

@@ -65,6 +65,11 @@ SELECT COUNT( DISTINCT IDCliente ) AS Clientes_Devolucao
   FROM #tbl_operacao
   WHERE Status = 'Devolução'
 
+-- 6. Qual é a média de valor por venda?
+
+SELECT ROUND(AVG( VALOR ),2) AS Media_Valor_Venda
+  FROM Vendas
+
 
 
 

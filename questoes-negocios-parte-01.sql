@@ -137,11 +137,11 @@ SELECT b.Loja AS Loja
 -- 12 .Quais são os três estados com maior volume de vendas?
 SELECT TOP 3 WITH TIES
 	   b.Estado AS Estado
-	 , SUM( a.Valor ) AS Valor_Total
+	 , SUM( a.Valor ) AS Total_Vendas
   FROM Vendas a
   JOIN Clientes b ON a.IDCliente = b.IDCliente
   GROUP BY b.Estado
-  ORDER BY Valor_Total DESC
+  ORDER BY Total_Vendas DESC
 
 -- 13. Em qual mês ocorreu o maior número de vendas?
 SELECT TOP 1 WITH TIES
@@ -152,5 +152,14 @@ SELECT TOP 1 WITH TIES
   FROM Vendas
   GROUP BY YEAR( Data ), MONTH( Data )
   ORDER BY Valor_Total DESC
+
+--14 .Quais são os três estados com maior volume de devolução?
+SELECT TOP 3 WITH TIES
+	   b.Estado AS Estado
+	 , SUM( a.Valor ) AS Total_Devolucao
+  FROM Devolucoes a
+  JOIN Clientes   b ON a.IDCliente = b.IDCliente
+  GROUP BY b.Estado
+  ORDER BY Total_Devolucao DESC
 
 

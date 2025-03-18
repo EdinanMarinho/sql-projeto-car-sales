@@ -162,4 +162,14 @@ SELECT TOP 3 WITH TIES
   GROUP BY b.Estado
   ORDER BY Total_Devolucao DESC
 
+-- 15. Em qual mês ocorreu o maior número de devolucao?
+SELECT TOP 1 WITH TIES
+	   YEAR( Data )  AS Ano
+	 , MONTH( Data ) AS Mes
+	 , SUM( Qtde )   AS Qtde_Total
+	 , SUM( Valor )  AS Devolucao_Total
+  FROM Devolucoes
+  GROUP BY YEAR( Data ), MONTH( Data )
+  ORDER BY Devolucao_Total DESC
+
 

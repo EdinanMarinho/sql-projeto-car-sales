@@ -97,7 +97,15 @@ SELECT b.Loja
       ) AS c
 )
 
+-- 8. Qual é a Loja com Maior Número de Vendas? Em termos de Valor (R$).
 
+SELECT TOP 1 WITH TIES 
+	   b.Loja
+	 , SUM( a.Valor ) AS Valor_Total
+  FROM Vendas a
+  JOIN Lojas  b ON a.IDloja = b.IDLoja
+  GROUP BY b.Loja
+  ORDER BY Valor_Total DESC
 
 
 

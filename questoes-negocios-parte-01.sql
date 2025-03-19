@@ -181,20 +181,28 @@ SELECT TOP 1 WITH TIES
   GROUP BY c.Categoria
   ORDER BY Devolucao_Total DESC
 
--- 17. Qual é a taxa de devolução por loja em quantidade e Valor?
-
-
-SELECT b.IDLoja
-	 , b.Loja
-	 , SUM( a.Qtde ) AS Qtde_Total
+-- 17. Qual é o segmento de veiculos que mais teve venda? Em Qtde?
+SELECT TOP 1 WITH TIES
+	   b.Segmento
+	 , SUM( a.Qtde )  AS Qtde_Total
 	 , SUM( a.Valor ) AS Valor_Total
-  FROM Devolucoes a
-  JOIN Lojas      b ON a.IDloja = b.IDLoja
-  GROUP BY b.IDLoja, b.Loja
+  FROM vw_fVendas a
+  JOIN vw_dProdutos b ON a.IDProduto = b.IDProduto
+  WHERE a.Status = 'Venda'
+  GROUP BY b.Segmento
+  ORDER BY Qtde_Total DESC
 
-SELECT SUM( Qtde )  AS Qtde_Total
-	 , SUM( Valor ) AS Valor_Total
-  FROM Devolucoes
+
+-- 17. Qual é o segmento de veiculos que mais teve venda? Em Valor?
+SELECT TOP 1 WITH TIES
+	   b.Segmento
+	 , SUM( a.Qtde )  AS Qtde_Total
+	 , SUM( a.Valor ) AS Valor_Total
+  FROM vw_fVendas a
+  JOIN vw_dProdutos b ON a.IDProduto = b.IDProduto
+  WHERE a.Status = 'Venda'
+  GROUP BY b.Segmento
+  ORDER BY Valor_Total DESC
 
 
 

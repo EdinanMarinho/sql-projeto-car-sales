@@ -215,5 +215,15 @@ SELECT TOP 1 WITH TIES
   GROUP BY b.Segmento
   ORDER BY Valor_Total DESC , Qtde_Total DESC
 
+-- 20. Qual a taxa de devolucao por loja?
+SELECT b.Loja
+	 , SUM(CASE WHEN a.Status = 'Devolução' THEN a.Qtde ELSE 0 END) AS QtdeDevolucoes
+	 , SUM( a.Qtde ) AS QtdeTransacoes
+	 , ROUND(CAST(SUM(CASE WHEN a.Status = 'Devolução' THEN a.Qtde ELSE 0 END) AS FLOAT) / SUM( a.Qtde ), 4) * 100 AS TaxaDevolucao
+  FROM vw_fVendas a
+  JOIN vw_dLojas  b ON a.IDloja = b.IDLoja
+  GROUP BY b.Loja
+  ORDER BY TaxaDevolucao DESC
+
 
 

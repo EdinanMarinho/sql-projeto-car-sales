@@ -204,6 +204,16 @@ SELECT TOP 1 WITH TIES
   GROUP BY b.Segmento
   ORDER BY Valor_Total DESC
 
+-- 19. Qual é o segmento de veiculos que mais teve devolucao? Em Qtde e Valor?
+SELECT TOP 1 WITH TIES
+	   b.Segmento
+	 , SUM( a.Qtde )  AS Qtde_Total
+	 , SUM( a.Valor ) AS Valor_Total
+  FROM vw_fVendas a
+  JOIN vw_dProdutos b ON a.IDProduto = b.IDProduto
+  WHERE a.Status = 'Devolução'
+  GROUP BY b.Segmento
+  ORDER BY Valor_Total DESC , Qtde_Total DESC
 
 
 

@@ -181,3 +181,21 @@ SELECT TOP 1 WITH TIES
   GROUP BY c.Categoria
   ORDER BY Devolucao_Total DESC
 
+-- 17. Qual é a taxa de devolução por loja em quantidade e Valor?
+
+
+SELECT b.IDLoja
+	 , b.Loja
+	 , SUM( a.Qtde ) AS Qtde_Total
+	 , SUM( a.Valor ) AS Valor_Total
+  FROM Devolucoes a
+  JOIN Lojas      b ON a.IDloja = b.IDLoja
+  GROUP BY b.IDLoja, b.Loja
+
+SELECT SUM( Qtde )  AS Qtde_Total
+	 , SUM( Valor ) AS Valor_Total
+  FROM Devolucoes
+
+
+
+

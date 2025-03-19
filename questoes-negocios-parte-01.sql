@@ -193,7 +193,7 @@ SELECT TOP 1 WITH TIES
   ORDER BY Qtde_Total DESC
 
 
--- 17. Qual é o segmento de veiculos que mais teve venda? Em Valor?
+-- 18. Qual é o segmento de veiculos que mais teve venda? Em Valor?
 SELECT TOP 1 WITH TIES
 	   b.Segmento
 	 , SUM( a.Qtde )  AS Qtde_Total

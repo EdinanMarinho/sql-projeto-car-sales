@@ -51,6 +51,7 @@ Após a importação dos dados via Fluxo de Dados no Power BI Desktop, foi reali
 ### 4.3 Criação do Esquema de Dados
 
 Desenvolvimento de um esquema de dados para facilitar a criação de consultas e otimizar a análise.
+![image alt](https://github.com/EdinanMarinho/sql-projeto-car-sales/blob/51a26155878c8c1ae965944309ee1e5512f18ef8/meu-esquema-de-dados.png)
 
 ### 4.4 Criação de Consultas para Análise no Excel
 

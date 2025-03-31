@@ -11,19 +11,24 @@
 
 Para o desenvolvimento do projeto, foram utilizadas as seguintes ferramentas:
 
-3.1 SQL Server: Base de dados e criação de Views para conexão com o DataFlow (Fluxo de Dados) no Microsoft Fabric, permitindo a conexão posterior ao Power BI.
+### 3.1 SQL Server 
+Base de dados e criação de Views para conexão com o DataFlow (Fluxo de Dados) no Microsoft Fabric, permitindo a conexão posterior ao Power BI.
 
-3.2 Pasta de Trabalho Excel: Utilizada para armazenar metas de faturamento para cada ano/mês e integrada ao fluxo de dados.
+### 3.2 Pasta de Trabalho Excel 
+Utilizada para armazenar metas de faturamento para cada ano/mês e integrada ao fluxo de dados.
 
-3.3 Microsoft Fabric: Utilização dos recursos de Fluxo de Dados (Gen 2) para carregar os dados do SQL Server e Excel.
+### 3.3 Microsoft Fabric 
+Utilização dos recursos de Fluxo de Dados (Gen 2) para carregar os dados do SQL Server e Excel.
 
-3.4 Power BI: Ferramenta principal para o desenvolvimento do dashboard.
+### 3.4 Power BI 
+Ferramenta principal para o desenvolvimento do dashboard.
 
-3.5 Figma: Criação do layout do dashboard, garantindo uma abordagem focada em visualização de dados e UX/UI Design com um layout leve.
+### 3.5 Figma 
+Criação do layout do dashboard, garantindo uma abordagem focada em visualização de dados e UX/UI Design com um layout leve.
 
-4. Desenvolvimento do Projeto
+## 4. Desenvolvimento do Projeto
 
-4.1 Tratamento e Medidas
+### 4.1 Tratamento e Medidas
 
 Após a importação dos dados via Fluxo de Dados no Power BI Desktop, foi realizada uma verificação adicional para ajustes:
 
@@ -33,27 +38,27 @@ Após a importação dos dados via Fluxo de Dados no Power BI Desktop, foi reali
 
 * dCalendario: Definição como tabela de data, configuração de ordenação por MesInt e AnoMesInt.
 
-dProdutos: Categorização de colunas com imagens como URL da imagem.
+* dProdutos: Categorização de colunas com imagens como URL da imagem.
 
-dClientes: Definição de categorias considerando estado e cidade.
+* dClientes: Definição de categorias considerando estado e cidade.
 
-4.2 Ajustes no Banco de Dados e Planilha de Metas
+### 4.2 Ajustes no Banco de Dados e Planilha de Metas
 
 * Conversão da coluna de data, anteriormente armazenada como inteiro (int), para o formato correto de data.
 
 * Definição de perguntas de negócios que o projeto buscará responder.
 
-4.3 Criação do Esquema de Dados
+### 4.3 Criação do Esquema de Dados
 
 Desenvolvimento de um esquema de dados para facilitar a criação de consultas e otimizar a análise.
 
-4.4 Criação de Consultas para Análise no Excel
+### 4.4 Criação de Consultas para Análise no Excel
 
 * Construção de uma consulta SQL para extração e análise rápida dos dados no Excel.
 
 * O objetivo é acelerar a criação do projeto e, futuramente, considerar abordagens mais avançadas, como clusterização e previsão de vendas com Python.
 
-4.5 Importação de Planilha de Feriados
+### 4.5 Importação de Planilha de Feriados
 
 * Importação de dados de feriados nacionais a partir do site da Anbima.
 
@@ -65,13 +70,11 @@ Desenvolvimento de um esquema de dados para facilitar a criação de consultas e
 
    * Caso contrário, retorna 1 (dia útil).
 
-4.6 Criação de Medidas
+### 4.6 Criação de Medidas
 
 * Foram criadas medidas gerais, de inteligência de tempo e de metas.
 
 * Organização das medidas em três pastas distintas para facilitar a manutenção.
-
-
 
 
 # Acessar mais detalhes do projeto

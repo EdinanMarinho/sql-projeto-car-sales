@@ -12,7 +12,8 @@
 Para o desenvolvimento do projeto, foram utilizadas as seguintes ferramentas:
 
 ### 3.1 SQL Server 
-Base de dados e criação de Views para conexão com o DataFlow (Fluxo de Dados) no Microsoft Fabric, permitindo a conexão posterior ao Power BI. Acesse o artigo sobre essa etapa  <a href="https://edinanmarinho.com.br/entendendo-o-banco-de-dados-e-criando-views-no-sql-server-para-o-projeto-car-sales/" target="_blank" rel="noopener noreferrer">Clicando aqui!</a>
+Base de dados e criação de Views para conexão com o DataFlow (Fluxo de Dados) no Microsoft Fabric, permitindo a conexão posterior ao Power BI. Acesse o artigo sobre essa etapa  <a href="https://edinanmarinho.com.br/entendendo-o-banco-de-dados-e-criando-views-no-sql-server-para-o-projeto-car-sales/" onclick="window.open(this.href, '_blank'); return false;">clicando aqui!</a>
+
 
 
 

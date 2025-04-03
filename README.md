@@ -12,16 +12,14 @@
 Para o desenvolvimento do projeto, foram utilizadas as seguintes ferramentas:
 
 ### 3.1 SQL Server 
-Base de dados e criação de Views para conexão com o DataFlow (Fluxo de Dados) no Microsoft Fabric, permitindo a conexão posterior ao Power BI. Acesse o artigo sobre essa etapa  <a href="https://edinanmarinho.com.br/entendendo-o-banco-de-dados-e-criando-views-no-sql-server-para-o-projeto-car-sales/" onclick="window.open(this.href, '_blank'); return false;">clicando aqui!</a>
-
-
+Base de dados e criação de Views para conexão com o DataFlow (Fluxo de Dados) no Microsoft Fabric, permitindo a conexão posterior ao Power BI. Acesse o artigo sobre essa etapa  <a href="https://edinanmarinho.com.br/entendendo-o-banco-de-dados-e-criando-views-no-sql-server-para-o-projeto-car-sales/" target="_blank"> clicando aqui</a>
 
 
 ### 3.2 Pasta de Trabalho Excel 
-Utilizada para armazenar metas de faturamento para cada ano/mês e integrada ao fluxo de dados.
+Utilizada para armazenar metas de faturamento para cada ano/mês e integrada ao fluxo de dados. Acesse o artigo com mais detalhes sobre essa etapa <a href="https://edinanmarinho.com.br/como-o-excel-e-sql-junto-ao-power-query-reduziram-o-tempo-de-analise-no-projeto-car-sales/" target="_blank"> clicando aqui </a>
 
 ### 3.3 Microsoft Fabric 
-Utilização dos recursos de Fluxo de Dados (Gen 2) para carregar os dados do SQL Server e Excel.
+Utilização dos recursos de Fluxo de Dados (Gen 2) para carregar os dados do SQL Server e Excel. Acesse artigo com mais detalhes sobre a etapa do Fluxo de Dados Gen2 no Fabric <a href="https://edinanmarinho.com.br/como-criei-um-fluxo-de-dados-gen2-no-microsoft-fabric-para-analise-de-vendas-no-projeto-car-sales/" target="_blank"> clicando aqui! </a>
 
 ### 3.4 Power BI 
 Ferramenta principal para o desenvolvimento do dashboard.

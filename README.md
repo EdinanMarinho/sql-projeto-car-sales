@@ -22,7 +22,7 @@ Utilizada para armazenar metas de faturamento para cada ano/mês e integrada ao 
 Utilização dos recursos de Fluxo de Dados (Gen 2) para carregar os dados do SQL Server e Excel. Acesse artigo com mais detalhes sobre a etapa do Fluxo de Dados Gen2 no Fabric <a href="https://edinanmarinho.com.br/como-criei-um-fluxo-de-dados-gen2-no-microsoft-fabric-para-analise-de-vendas-no-projeto-car-sales/" target="_blank">clicando aqui!</a>
 
 ### 3.4 Power BI 
-Ferramenta principal para o desenvolvimento do dashboard.
+Ferramenta principal para o desenvolvimento do dashboard. Acesse artigo com mais detalhes sobre como foi o desenvolvimento do dashboard <a href="https://edinanmarinho.com.br/como-criei-um-fluxo-de-dados-gen2-no-microsoft-fabric-para-analise-de-vendas-no-projeto-car-sales/" target="_blank">clicando aqui!</a>
 
 ### 3.5 Figma 
 Criação do layout do dashboard, garantindo uma abordagem focada em visualização de dados e UX/UI Design com um layout leve.

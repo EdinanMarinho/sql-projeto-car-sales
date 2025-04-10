@@ -9,7 +9,7 @@ SELECT p.IDProduto                                  AS IDProduto
 	 , p.Produto                                    AS Produto
 	 , p.Segmento                                   AS Segmento
 	 , c.Categoria                                  AS Categoria
-	 , LEFT( Produto, CHARINDEX(' ', p.Produto) -1) AS Marca
+	 , LEFT( Produto, CHARINDEX('Â ', p.Produto) -1) AS Marca
 	 , p.Preco                                      AS Preco
 	 , P.ImagemProduto                              AS ImagemProduto
 	 , P.Marca                                      AS ImagemMarca

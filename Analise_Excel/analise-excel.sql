@@ -1,7 +1,7 @@
 -- Recuperacao dos dados necessarios para realizar analise no Excel.
 -- A consulta foi inserida diretamente no Excel.
 -- Dados -> Obter Dados -> Do Banco de Dados -> SQL Server ->
--- Inserido informacoes do Servidor, Banco de Dados e em opções avançadas a consulta abaixo. 
+-- Inserido informacoes do Servidor, Banco de Dados e em opÃ§Ãµes avanÃ§adas a consulta abaixo. 
 
 SELECT a.Status
 	 , a.Qtde
@@ -15,7 +15,7 @@ SELECT a.Status
 	 , b.Categoria
 	 , b.Segmento
 	 , b.Produto
-	 , LEFT(b.Produto, CHARINDEX(' ', b.Produto)) AS Marca
+	 , LEFT(b.Produto, CHARINDEX('Â ', b.Produto)) AS Marca
   FROM (
 SELECT * FROM Vendas
 UNION 
